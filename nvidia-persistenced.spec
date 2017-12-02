@@ -1,5 +1,5 @@
 Name:           nvidia-persistenced
-Version:        387.22
+Version:        387.34
 Release:        1%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
@@ -69,6 +69,9 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Sat Dec 02 2017 Leigh Scott <leigh123linux@googlemail.com> - 387.34-1
+- Update to 387.34
+
 * Mon Oct 30 2017 Nicolas Chauvet <kwizart@gmail.com> - 387.22-1
 - Update to 387.22
 
