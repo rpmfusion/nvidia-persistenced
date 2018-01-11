@@ -9,6 +9,8 @@ Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 ExclusiveArch:  x86_64 i686 armv7hl aarch64 ppc64le
 
 BuildRequires:  m4
+# https://fedoraproject.org/wiki/Changes/SunRPCRemoval
+BuildRequires:  libtirpc-devel
 
 Buildrequires: systemd
 Requires(post): systemd
@@ -23,10 +25,9 @@ specifically for use by the NVIDIA Linux driver.
 %prep
 %setup -q
 
-
 %build
-export CFLAGS="%{optflags}"
-export LDFLAGS="%{?__global_ldflags}"
+export CFLAGS="%{optflags} -I%{_includedir}/tirpc"
+export LDFLAGS="%{?__global_ldflags} -ltirpc"
 %make_build \
   NVDEBUG=1 \
   NV_VERBOSE=1 \
@@ -71,6 +72,7 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 %changelog
 * Thu Jan 11 2018 Leigh Scott <leigh123linux@googlemail.com> - 390.12-1
 - Update to 390.12
+- Switch to libtirpc-devel for rpc
 
 * Sat Dec 02 2017 Leigh Scott <leigh123linux@googlemail.com> - 387.34-1
 - Update to 387.34
