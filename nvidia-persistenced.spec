@@ -1,11 +1,11 @@
 Name:           nvidia-persistenced
-Version:        390.25
-Release:        2%{?dist}
+Version:        390.42
+Release:        1%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
 License:        MIT and GPLv2+
-URL:            https://github.com/NVIDIA/nvidia-persistenced
-Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+URL:            https://download.nvidia.com/XFree86/%{name}/
+Source0:        %{url}/%{name}-%{version}.tar.bz2
 ExclusiveArch:  x86_64 i686 armv7hl aarch64 ppc64le
 
 BuildRequires:  m4
@@ -70,6 +70,9 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Tue Mar 13 2018 Leigh Scott <leigh123linux@googlemail.com> - 390.42-1
+- Update to 390.42
+
 * Fri Mar 02 2018 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 390.25-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
