@@ -6,7 +6,7 @@ Summary:        Daemon for maintaining persistent driver state
 License:        MIT and GPLv2+
 URL:            https://download.nvidia.com/XFree86/%{name}/
 Source0:        %{url}/%{name}-%{version}.tar.bz2
-ExclusiveArch:  x86_64 i686 armv7hl aarch64 ppc64le
+ExclusiveArch:  x86_64 i686 armv7hl
 
 BuildRequires:  m4
 # https://fedoraproject.org/wiki/Changes/SunRPCRemoval
