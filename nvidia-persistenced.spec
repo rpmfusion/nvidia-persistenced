@@ -1,6 +1,6 @@
 Name:           nvidia-persistenced
-Version:        396.45
-Release:        2%{?dist}
+Version:        396.51
+Release:        1%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
 License:        MIT and GPLv2+
@@ -70,6 +70,9 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Sat Aug 04 2018 Leigh Scott <leigh123linux@googlemail.com> - 396.51-1
+- Update to 396.51
+
 * Fri Jul 27 2018 RPM Fusion Release Engineering <sergio@serjux.com> - 396.45-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
