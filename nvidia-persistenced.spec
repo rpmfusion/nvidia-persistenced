@@ -1,6 +1,6 @@
 Name:           nvidia-persistenced
 Epoch:          3
-Version:        396.51
+Version:        396.54
 Release:        1%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
@@ -71,6 +71,9 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Wed Aug 22 2018 Leigh Scott <leigh123linux@googlemail.com> - 3:396.54-1
+- Update to 396.54
+
 * Wed Aug 15 2018 Nicolas Chauvet <kwizart@gmail.com> - 3:396.51-1
 - Bump epoch
 
