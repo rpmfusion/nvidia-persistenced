@@ -9,6 +9,7 @@ URL:            https://download.nvidia.com/XFree86/%{name}/
 Source0:        %{url}/%{name}-%{version}.tar.bz2
 ExclusiveArch:  x86_64
 
+BuildRequires:  gcc
 BuildRequires:  m4
 # https://fedoraproject.org/wiki/Changes/SunRPCRemoval
 BuildRequires:  libtirpc-devel
