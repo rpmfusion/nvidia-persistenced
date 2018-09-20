@@ -1,3 +1,5 @@
+%undefine _ld_as_needed
+
 Name:           nvidia-persistenced
 Epoch:          3
 Version:        410.57
