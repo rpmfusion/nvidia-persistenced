@@ -1,6 +1,8 @@
+%undefine _ld_as_needed
+
 Name:           nvidia-persistenced
 Epoch:          3
-Version:        396.54
+Version:        410.73
 Release:        1%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
@@ -9,6 +11,7 @@ URL:            https://download.nvidia.com/XFree86/%{name}/
 Source0:        %{url}/%{name}-%{version}.tar.bz2
 ExclusiveArch:  x86_64
 
+BuildRequires:  gcc
 BuildRequires:  m4
 # https://fedoraproject.org/wiki/Changes/SunRPCRemoval
 BuildRequires:  libtirpc-devel
@@ -71,6 +74,15 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Thu Oct 25 2018 Leigh Scott <leigh123linux@googlemail.com> - 3:410.73-1
+- Update to 410.73 release
+
+* Tue Oct 16 2018 Leigh Scott <leigh123linux@googlemail.com> - 3:410.66-1
+- Update to 410.66 release
+
+* Thu Sep 20 2018 Leigh Scott <leigh123linux@googlemail.com> - 3:410.57-1
+- Update to 410.57 beta
+
 * Wed Aug 22 2018 Leigh Scott <leigh123linux@googlemail.com> - 3:396.54-1
 - Update to 396.54
 
