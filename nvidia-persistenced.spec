@@ -3,7 +3,7 @@
 Name:           nvidia-persistenced
 Epoch:          3
 Version:        430.26
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
 License:        MIT and GPLv2+
@@ -74,6 +74,9 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Mon Jun 17 2019 Nicolas Chauvet <kwizart@gmail.com> - 3:430.26-2
+- Add back on armv7hl/aarch64 for 390/l4t
+
 * Tue Jun 11 2019 Leigh Scott <leigh123linux@googlemail.com> - 3:430.26-1
 - Update to 430.26 release
 
