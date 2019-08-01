@@ -2,14 +2,14 @@
 
 Name:           nvidia-persistenced
 Epoch:          3
-Version:        430.26
+Version:        430.40
 Release:        1%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
 License:        MIT and GPLv2+
 URL:            https://download.nvidia.com/XFree86/%{name}/
 Source0:        %{url}/%{name}-%{version}.tar.bz2
-ExclusiveArch:  x86_64
+ExclusiveArch:  x86_64 armv7hl aarch64
 
 BuildRequires:  gcc
 BuildRequires:  m4
@@ -74,6 +74,15 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Mon Jul 29 2019 Leigh Scott <leigh123linux@googlemail.com> - 3:430.40-1
+- Update to 430.40 release
+
+* Tue Jul 16 2019 Leigh Scott <leigh123linux@googlemail.com> - 3:430.34-1
+- Update to 430.34 release
+
+* Mon Jun 17 2019 Nicolas Chauvet <kwizart@gmail.com> - 3:430.26-2
+- Add back on armv7hl/aarch64 for 390/l4t
+
 * Tue Jun 11 2019 Leigh Scott <leigh123linux@googlemail.com> - 3:430.26-1
 - Update to 430.26 release
 
