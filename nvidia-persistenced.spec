@@ -2,14 +2,14 @@
 
 Name:           nvidia-persistenced
 Epoch:          3
-Version:        430.40
+Version:        440.31
 Release:        1%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
 License:        MIT and GPLv2+
 URL:            https://download.nvidia.com/XFree86/%{name}/
 Source0:        %{url}/%{name}-%{version}.tar.bz2
-ExclusiveArch:  x86_64 armv7hl aarch64
+ExclusiveArch:  x86_64
 
 BuildRequires:  gcc
 BuildRequires:  m4
@@ -74,6 +74,21 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Mon Nov 04 2019 Leigh Scott <leigh123linux@gmail.com> - 3:440.31-1
+- Update to 440.31 release
+
+* Thu Oct 17 2019 Leigh Scott <leigh123linux@googlemail.com> - 3:440.26-1
+- Update to 440.26 beta
+
+* Fri Aug 30 2019 Leigh Scott <leigh123linux@googlemail.com> - 3:435.21-1
+- Update to 435.21 release
+
+* Tue Aug 13 2019 Leigh Scott <leigh123linux@googlemail.com> - 3:435.17-1
+- Update to 435.17 beta
+
+* Sat Aug 10 2019 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 3:430.40-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
+
 * Mon Jul 29 2019 Leigh Scott <leigh123linux@googlemail.com> - 3:430.40-1
 - Update to 430.40 release
 
