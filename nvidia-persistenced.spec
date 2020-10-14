@@ -9,7 +9,9 @@ Summary:        Daemon for maintaining persistent driver state
 License:        MIT and GPLv2+
 URL:            https://download.nvidia.com/XFree86/%{name}/
 Source0:        %{url}/%{name}-%{version}.tar.bz2
-ExclusiveArch:  x86_64
+# This package is also available for 390xx/340xx
+# So enable i686 and armv7hl
+ExclusiveArch:  x86_64 i686 armv7hl
 
 BuildRequires:  gcc
 BuildRequires:  m4
