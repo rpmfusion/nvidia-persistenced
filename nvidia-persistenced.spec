@@ -2,8 +2,8 @@
 
 Name:           nvidia-persistenced
 Epoch:          3
-Version:        455.28
-Release:        2%{?dist}
+Version:        455.38
+Release:        1%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
 License:        MIT and GPLv2+
@@ -76,6 +76,9 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Thu Oct 29 2020 Leigh Scott <leigh123linux@gmail.com> - 3:455.38-1
+- Update to 455.38 release
+
 * Wed Oct 14 2020 Nicolas Chauvet <kwizart@gmail.com> - 3:455.28-2
 - Enable arches for legacy 390x/340xx
 
