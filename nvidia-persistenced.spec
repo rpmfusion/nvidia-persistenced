@@ -2,14 +2,16 @@
 
 Name:           nvidia-persistenced
 Epoch:          3
-Version:        450.66
+Version:        455.38
 Release:        1%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
 License:        MIT and GPLv2+
 URL:            https://download.nvidia.com/XFree86/%{name}/
 Source0:        %{url}/%{name}-%{version}.tar.bz2
-ExclusiveArch:  x86_64
+# This package is also available for 390xx/340xx
+# So enable i686 and armv7hl
+ExclusiveArch:  x86_64 i686 armv7hl
 
 BuildRequires:  gcc
 BuildRequires:  m4
@@ -74,6 +76,18 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Thu Oct 29 2020 Leigh Scott <leigh123linux@gmail.com> - 3:455.38-1
+- Update to 455.38 release
+
+* Wed Oct 14 2020 Nicolas Chauvet <kwizart@gmail.com> - 3:455.28-2
+- Enable arches for legacy 390x/340xx
+
+* Wed Oct  7 2020 Leigh Scott <leigh123linux@gmail.com> - 3:455.28-1
+- Update to 455.28 release
+
+* Fri Sep 18 2020 Leigh Scott <leigh123linux@gmail.com> - 3:455.23.04-1
+- Update to 455.23.04 beta
+
 * Wed Aug 19 2020 Leigh Scott <leigh123linux@gmail.com> - 3:450.66-1
 - Update to 450.66 release
 
