@@ -3,7 +3,7 @@
 Name:           nvidia-persistenced
 Epoch:          3
 Version:        515.76
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
 License:        MIT and GPLv2+
@@ -11,7 +11,7 @@ URL:            https://github.com/NVIDIA/%{name}
 Source0:        %url/archive/%{version}/%{name}-%{version}.tar.gz
 # This package is also available for 390xx/340xx
 # So enable i686 and armv7hl
-ExclusiveArch:  x86_64 i686 armv7hl
+ExclusiveArch:  x86_64 i686 armv7hl aarch64
 
 BuildRequires:  gcc
 BuildRequires:  m4
@@ -35,6 +35,7 @@ specifically for use by the NVIDIA Linux driver.
 export CFLAGS="%{optflags} -I%{_includedir}/tirpc"
 export LDFLAGS="%{?__global_ldflags} -ltirpc"
 %make_build \
+  %{_smp_mflags} \
   NVDEBUG=1 \
   NV_VERBOSE=1 \
   STRIP_CMD=true NV_KEEP_UNSTRIPPED_BINARIES=1 \
@@ -76,6 +77,9 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Sun Sep 25 2022 Dennnis Gilmore <dennis@ausil.us> - 3:515.76-2
+- add aarch64 support
+
 * Wed Sep 21 2022 Leigh Scott <leigh123linux@gmail.com> - 3:515.76-1
 - Update to 515.76
 
