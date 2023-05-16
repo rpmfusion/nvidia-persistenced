@@ -2,7 +2,7 @@
 
 Name:           nvidia-persistenced
 Epoch:          3
-Version:        515.105.01
+Version:        525.116.04
 Release:        1%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
@@ -11,7 +11,7 @@ URL:            https://github.com/NVIDIA/%{name}
 Source0:        %url/archive/%{version}/%{name}-%{version}.tar.gz
 # This package is also available for 390xx/340xx
 # So enable i686 and armv7hl
-ExclusiveArch:  x86_64 i686 armv7hl
+ExclusiveArch:  x86_64 i686 armv7hl aarch64
 
 BuildRequires:  gcc
 BuildRequires:  m4
@@ -35,6 +35,7 @@ specifically for use by the NVIDIA Linux driver.
 export CFLAGS="%{optflags} -I%{_includedir}/tirpc"
 export LDFLAGS="%{?__global_ldflags} -ltirpc"
 %make_build \
+  %{_smp_mflags} \
   NVDEBUG=1 \
   NV_VERBOSE=1 \
   STRIP_CMD=true NV_KEEP_UNSTRIPPED_BINARIES=1 \
@@ -76,11 +77,30 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
-* Fri Mar 31 2023 Nicolas Chauvet <kwizart@gmail.com> - 3:515.105.01-1
-- Update to 515.105.01
+* Tue May 16 2023 Nicolas Chauvet <kwizart@gmail.com> - 3:525.116.04-1
+- Update to 525.116.04
 
-* Fri Jan 06 2023 Nicolas Chauvet <kwizart@gmail.com> - 3:515.86.01-1
-- Update to 515.86.01
+* Thu Jan 05 2023 Leigh Scott <leigh123linux@gmail.com> - 3:525.78.01-1
+- Update to 525.78.01
+
+* Mon Nov 28 2022 Leigh Scott <leigh123linux@gmail.com> - 3:525.60.11-1
+- Update to 525.60.11
+
+* Thu Nov 10 2022 Leigh Scott <leigh123linux@gmail.com> - 3:525.53-1
+- Update to 525.53 beta
+
+* Thu Oct 13 2022 Leigh Scott <leigh123linux@gmail.com> - 3:520.56.06-1
+- Update to 520.56.06
+
+* Sun Sep 25 2022 Dennnis Gilmore <dennis@ausil.us> - 3:515.76-2
+- add aarch64 support
+
+* Wed Sep 21 2022 Leigh Scott <leigh123linux@gmail.com> - 3:515.76-1
+- Update to 515.76
+
+* Mon Aug 08 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 3:515.65.01-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
+  5.1
 
 * Thu Aug 04 2022 Leigh Scott <leigh123linux@gmail.com> - 3:515.65.01-1
 - Update to 515.65.01
