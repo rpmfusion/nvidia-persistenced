@@ -2,13 +2,14 @@
 
 Name:           nvidia-persistenced
 Epoch:          3
-Version:        535.98
+Version:        535.104.05
 Release:        1%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
 License:        MIT and GPLv2+
 URL:            https://github.com/NVIDIA/%{name}
-Source0:        %url/archive/%{version}/%{name}-%{version}.tar.gz
+#Source0:        %url/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        https://download.nvidia.com/XFree86/%{name}/%{name}-%{version}.tar.bz2
 # This package is also available for 390xx/340xx
 # So enable i686 and armv7hl
 ExclusiveArch:  x86_64 i686 armv7hl aarch64
@@ -77,6 +78,9 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Tue Aug 22 2023 Leigh Scott <leigh123linux@gmail.com> - 3:535.104.05-1
+- Update to 535.104.05
+
 * Wed Aug 09 2023 Leigh Scott <leigh123linux@gmail.com> - 3:535.98-1
 - Update to 535.98
 
