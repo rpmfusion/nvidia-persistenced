@@ -1,14 +1,12 @@
-%undefine _ld_as_needed
-
 Name:           nvidia-persistenced
 Epoch:          3
-Version:        595.80
-Release:        1%{?dist}
+Version:        610.43.03
+Release:        2%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
 License:        MIT and GPLv2+
 URL:            https://github.com/NVIDIA/%{name}
-#Source0:        %url/archive/%{version}/%{name}-%{version}.tar.gz
+#Source0:        %%url/archive/%%{version}/%%{name}-%%{version}.tar.gz
 Source0:        https://download.nvidia.com/XFree86/%{name}/%{name}-%{version}.tar.bz2
 # This package is also available for 390xx/340xx
 # So enable i686 and armv7hl
@@ -30,11 +28,9 @@ specifically for use by the NVIDIA Linux driver.
 
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-export CFLAGS="%{optflags} -I%{_includedir}/tirpc"
-export LDFLAGS="%{?__global_ldflags} -ltirpc"
 %make_build \
   %{_smp_mflags} \
   NVDEBUG=1 \
@@ -78,8 +74,17 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
-* Fri May 29 2026 Leigh Scott <leigh123linux@gmail.com> - 3:595.80-1
-- Update to 595.80 release
+* Wed Jul 08 2026 Leigh Scott <leigh123linux@gmail.com> - 3:610.43.03-2
+- rebuilt
+
+* Wed Jul 08 2026 Leigh Scott <leigh123linux@gmail.com> - 3:610.43.03-1
+- Update to 610.43.03 release
+
+* Mon Jun 15 2026 Leigh Scott <leigh123linux@gmail.com> - 3:610.43.02-2
+- Clean up the old hacks
+
+* Tue May 26 2026 Leigh Scott <leigh123linux@gmail.com> - 3:610.43.02-1
+- Update to 610.43.02 release
 
 * Tue Apr 28 2026 Leigh Scott <leigh123linux@gmail.com> - 3:595.71.05-1
 - Update to 595.71.05 release
