@@ -1,7 +1,7 @@
 Name:           nvidia-persistenced
 Epoch:          3
 Version:        610.43.03
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
 License:        MIT and GPLv2+
@@ -74,6 +74,9 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Sun Aug 02 2026 RPM Fusion Release Engineering <leigh123linux@rpmfusion.org> - 3:610.43.03-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_45_Mass_Rebuild
+
 * Wed Jul 08 2026 Leigh Scott <leigh123linux@gmail.com> - 3:610.43.03-2
 - rebuilt
 
