@@ -2,7 +2,7 @@
 
 Name:           nvidia-persistenced
 Epoch:          3
-Version:        580.178.04
+Version:        580.196.07
 Release:        1%{?dist}
 Summary:        Daemon for maintaining persistent driver state
 
@@ -78,6 +78,9 @@ chmod -x %{buildroot}%{_mandir}/man1/%{name}.1.*
 
 
 %changelog
+* Mon Nov 09 2026 Sérgio Basto <sergio@serjux.com> - 3:580.196.07-1
+- Update nvidia-persistenced to 580.196.07
+
 * Wed Aug 05 2026 Leigh Scott <leigh123linux@gmail.com> - 3:580.178.04-1
 - Update to 580.178.04 release
 
